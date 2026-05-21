@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página protótipo da MRX Serviços para organizar componentes, ideias e padrões visuais do site.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#005F73">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/cabecalho.css">
+    <link rel="stylesheet" href="css/prototipo.css">
+
+    <title>Protótipo | MRX Serviços</title>
+</head>
+<body>
+    <header id="cabecalho">
+        <div class="logo">
+            MRX Serviços
+        </div>
+        <nav class="menu" aria-label="Navegação principal">
+            <ul>
+                <li><a href="../index.html">INÍCIO</a></li>
+                <li><a href="../nosso-trabalho.html">NOSSO TRABALHO</a></li>
+                <li><a href="../contato.html">CONTATO</a></li>
+                <li><a href="../denuncia.html">CANAL DE DENÚNCIA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-prototipo">
+            <div>
+                <p class="subtitulo">Protótipo interno</p>
+                <h1>Biblioteca rápida para testar ideias do site</h1>
+                <p>Esta página guarda componentes, combinações visuais e observações úteis sem mexer nas páginas principais.</p>
+                <div class="acoes-prototipo">
+                    <a class="botao primario" href="../contato.html">Ver contato</a>
+                    <a class="botao secundario" href="../nosso-trabalho.html">Ver trabalho</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="painel-prototipo">
+            <div class="cabecalho-secao">
+                <p class="subtitulo">Inventário</p>
+                <h2>Elementos que fazem sentido manter à mão</h2>
+                <p>Use este espaço para comparar padrões antes de levar algo para `index.html`, `nosso-trabalho.html` ou `contato.html`.</p>
+            </div>
+
+            <div class="grade-componentes">
+                <article class="card-componente">
+                    <i class="bi bi-building"></i>
+                    <h3>Serviço</h3>
+                    <p>Card base para áreas de atuação, com ícone, título curto e texto direto.</p>
+                </article>
+                <article class="card-componente">
+                    <i class="bi bi-shield-check"></i>
+                    <h3>Confiança</h3>
+                    <p>Bom para destacar segurança, responsabilidade, qualidade e processos.</p>
+                </article>
+                <article class="card-componente">
+                    <i class="bi bi-tools"></i>
+                    <h3>Execução</h3>
+                    <p>Serve para chamadas sobre manutenção, restauração e soluções sob medida.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="duas-colunas">
+            <div class="bloco-claro">
+                <p class="subtitulo">Estados de formulário</p>
+                <h2>Validação visual</h2>
+                <form class="formulario-demo" aria-label="Demonstração visual de campos">
+                    <div class="campo-demo">
+                        <label for="demoNome">Campo normal</label>
+                        <input type="text" id="demoNome" placeholder="Nome completo">
+                    </div>
+                    <div class="campo-demo erro">
+                        <label for="demoTipo">Campo com aviso</label>
+                        <select id="demoTipo">
+                            <option>Selecione uma opção</option>
+                        </select>
+                        <p>Preencha este campo.</p>
+                    </div>
+                    <div class="campo-demo compacto erro">
+                        <label for="demoCaptcha">Confirmação anti-spam</label>
+                        <input type="number" id="demoCaptcha" placeholder="Digite o resultado">
+                        <p>Preencha este campo.</p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bloco-escuro">
+                <p class="subtitulo">Anotações</p>
+                <h2>Guardar aqui</h2>
+                <ul class="lista-notas">
+                    <li>Ideias de seção antes de aplicar na home.</li>
+                    <li>Variações de cards, botões, avisos e chamadas.</li>
+                    <li>Textos provisórios que ainda precisam de aprovação.</li>
+                    <li>Pequenos testes de espaçamento e responsividade.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="faixa-decisao">
+            <div>
+                <p class="subtitulo">Uso recomendado</p>
+                <h2>Área segura para experimentar</h2>
+                <p>Quando uma ideia estiver aprovada aqui, ela pode ser copiada para a página definitiva com menos risco de quebrar algo importante.</p>
+            </div>
+            <a href="../index.html">Voltar para o início</a>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="rodape-marca">
+            <h2>MRX Serviços</h2>
+            <p>Página protótipo para organizar padrões e ideias do site.</p>
+        </div>
+
+        <div class="rodape-links">
+            <a href="../index.html">Início</a>
+            <a href="../nosso-trabalho.html">Nosso Trabalho</a>
+            <a href="../contato.html">Contato</a>
+            <a href="../denuncia.html">Canal de Denúncia</a>
+        </div>
+    </footer>
+
+    <script src="../js/site.js" defer></script>
+</body>
+</html>

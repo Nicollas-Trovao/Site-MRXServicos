@@ -1,0 +1,1567 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #005F73;
+    color: #ffffff;
+}
+
+body.modal-aberto {
+    overflow: hidden;
+}
+
+body:not(.area-curriculo) .campo-curriculo {
+    display: none;
+}
+
+body:not(.area-geral) .campo-canal-geral {
+    display: none;
+}
+
+body:not(.area-servicos) .campo-servicos,
+body:not(.area-geral) .campo-geral {
+    display: none;
+}
+
+#cabecalho {
+    background: #005F73;
+}
+
+#cabecalho,
+#cabecalho.scrolled {
+    position: fixed;
+    left: 0;
+    width: 100%;
+}
+
+.subtitulo {
+    color: #EE9B00;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.hero-contato {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 155px 8% 105px;
+    background: linear-gradient(135deg, #001219, #005F73 58%, #0A9396);
+}
+
+.hero-contato div {
+    max-width: 760px;
+}
+
+.hero-contato h1 {
+    font-size: 3em;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.hero-contato p {
+    color: #ffffff;
+    font-size: 1.16em;
+    line-height: 1.78;
+    max-width: 720px;
+}
+
+.area-contato {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+    gap: 40px;
+    padding: clamp(88px, 9vw, 124px) 8%;
+    background: #005F73;
+}
+
+.painel-formulario {
+    border-radius: 8px;
+    background: #ffffff;
+    color: #001219;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow: 0 26px 60px rgba(0, 18, 25, 0.22);
+}
+
+.card-contato {
+    border-radius: 8px;
+    background: rgba(0, 18, 25, 0.94);
+    color: #ffffff;
+    border-left: 4px solid #CA6702;
+    box-shadow: 0 18px 42px rgba(0, 18, 25, 0.14);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.35s ease;
+}
+
+.card-contato:hover {
+    border-color: #EE9B00;
+    box-shadow: 0 24px 54px rgba(0, 18, 25, 0.24);
+    transform: translateY(-4px);
+}
+
+.painel-formulario {
+    padding: clamp(34px, 4vw, 48px);
+}
+
+.cabecalho-formulario {
+    margin-bottom: 34px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid rgba(0, 95, 115, 0.14);
+}
+
+.cabecalho-formulario h2 {
+    color: #005F73;
+    font-size: clamp(2em, 3vw, 2.7em);
+    line-height: 1.05;
+    margin-bottom: 14px;
+}
+
+.cabecalho-formulario p {
+    color: #001219;
+    line-height: 1.75;
+    max-width: 720px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 20px;
+}
+
+.campo {
+    position: relative;
+    display: grid;
+    gap: 9px;
+    align-content: start;
+}
+
+.campo label {
+    color: #005F73;
+    font-weight: 700;
+    font-size: 0.95em;
+}
+
+.campo-area {
+    border: 0;
+}
+
+.campo-area legend {
+    margin-bottom: 14px;
+    color: #005F73;
+    font-weight: 700;
+    font-size: 0.95em;
+}
+
+.opcoes-area {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.opcoes-area label {
+    position: relative;
+    min-width: 0;
+    cursor: pointer;
+}
+
+.opcoes-area input {
+    position: absolute;
+    inset: 16px auto auto 16px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.opcoes-area span {
+    position: relative;
+    display: block;
+    min-height: 136px;
+    padding: 20px 16px 18px 52px;
+    border: 1px solid rgba(10, 147, 150, 0.55);
+    border-radius: 6px;
+    background: #ffffff;
+    color: #001219;
+    transition: border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease, transform 0.35s ease;
+}
+
+.opcoes-area span::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 18px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(0, 95, 115, 0.45);
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: inset 0 0 0 4px #ffffff;
+    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.opcoes-area span::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    border-top: 3px solid transparent;
+    pointer-events: none;
+    transition: border-color 0.3s ease;
+}
+
+.opcoes-area label:hover span {
+    border-color: rgba(238, 155, 0, 0.72);
+    transform: translateY(-2px);
+}
+
+.opcoes-area strong,
+.opcoes-area small {
+    display: block;
+}
+
+.opcoes-area strong {
+    color: #005F73;
+    font-size: 0.98em;
+    line-height: 1.3;
+}
+
+.opcoes-area small {
+    margin-top: 8px;
+    color: rgba(0, 18, 25, 0.72);
+    font-size: 0.88em;
+    line-height: 1.45;
+}
+
+.opcoes-area input:checked + span {
+    border-color: #EE9B00;
+    background: linear-gradient(180deg, rgba(238, 155, 0, 0.14), rgba(255, 255, 255, 0.98));
+    box-shadow: 0 12px 28px rgba(0, 18, 25, 0.1), 0 0 0 3px rgba(238, 155, 0, 0.16);
+}
+
+.opcoes-area input:checked + span::before {
+    border-color: #EE9B00;
+    background: #005F73;
+    box-shadow: inset 0 0 0 5px #ffffff, 0 0 0 3px rgba(238, 155, 0, 0.18);
+}
+
+.opcoes-area input:checked + span::after {
+    border-top-color: #EE9B00;
+}
+
+.opcoes-area input:focus-visible + span {
+    outline: 3px solid rgba(238, 155, 0, 0.28);
+    outline-offset: 2px;
+}
+
+.campo-canal-geral {
+    border: 0;
+}
+
+.campo-canal-geral legend {
+    margin-bottom: 10px;
+    color: #005F73;
+    font-weight: 700;
+    font-size: 0.95em;
+}
+
+.opcoes-canal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.opcoes-canal label {
+    position: relative;
+    min-width: 180px;
+    cursor: pointer;
+}
+
+.opcoes-canal input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.opcoes-canal span {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 18px 12px 42px;
+    border: 1px solid rgba(10, 147, 150, 0.55);
+    border-radius: 6px;
+    background: #ffffff;
+    color: #005F73;
+    font-weight: 700;
+    transition: border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease, transform 0.35s ease;
+}
+
+.opcoes-canal span::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(0, 95, 115, 0.42);
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: inset 0 0 0 3px #ffffff;
+    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.opcoes-canal label:hover span {
+    border-color: rgba(238, 155, 0, 0.72);
+    transform: translateY(-2px);
+}
+
+.opcoes-canal input:checked + span {
+    border-color: #EE9B00;
+    background: #005F73;
+    color: #ffffff;
+    box-shadow: 0 12px 24px rgba(0, 95, 115, 0.16), 0 0 0 3px rgba(238, 155, 0, 0.18);
+}
+
+.opcoes-canal input:checked + span::before {
+    border-color: #EE9B00;
+    background: #EE9B00;
+    box-shadow: inset 0 0 0 3px #005F73;
+}
+
+.opcoes-canal input:focus-visible + span {
+    outline: 3px solid rgba(238, 155, 0, 0.28);
+    outline-offset: 2px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 15px 14px;
+    font: inherit;
+    border: 1px solid rgba(10, 147, 150, 0.72);
+    border-radius: 8px;
+    color: #001219;
+    background: rgba(255, 255, 255, 0.98);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.campo input[type="file"] {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.campo input[type="file"]::file-selector-button {
+    min-height: 40px;
+    margin-right: 14px;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 5px;
+    background: #005F73;
+    color: #ffffff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.campo input[type="file"]::file-selector-button:hover {
+    background: #0A9396;
+    transform: translateY(-1px);
+}
+
+.controle-arquivo {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #0A9396;
+    border-radius: 6px;
+    background: #ffffff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.campo-curriculo.erro .controle-arquivo {
+    border-color: #BB3E03;
+    box-shadow: 0 0 0 3px rgba(187, 62, 3, 0.12);
+}
+
+.controle-arquivo:has(.input-arquivo:focus-visible) {
+    border-color: #EE9B00;
+    box-shadow: 0 0 0 3px rgba(238, 155, 0, 0.18);
+}
+
+.campo-curriculo .input-arquivo {
+    position: absolute;
+    width: 1px;
+    min-height: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.campo .botao-arquivo {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 54px;
+    padding: 13px 20px;
+    border: 0;
+    border-radius: 0;
+    background: #005F73;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 1.2;
+    box-shadow: 0 10px 20px rgba(0, 95, 115, 0.18);
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.campo .botao-arquivo:hover,
+.input-arquivo:focus-visible + .botao-arquivo {
+    background: #0A9396;
+    box-shadow: none;
+    transform: none;
+}
+
+.input-arquivo:focus-visible + .botao-arquivo {
+    outline: none;
+}
+
+.ajuda-campo {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+    border-left: 1px solid rgba(10, 147, 150, 0.36);
+    color: rgba(0, 18, 25, 0.68);
+    font-size: 0.88em;
+    line-height: 1.45;
+}
+
+.ajuda-campo.arquivo-selecionado {
+    color: #005F73;
+    font-weight: 700;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: rgba(0, 18, 25, 0.56);
+}
+
+.campo input,
+.campo select {
+    min-height: 52px;
+}
+
+.campo select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #005F73 50%), linear-gradient(135deg, #005F73 50%, transparent 50%);
+    background-position: calc(100% - 18px) 22px, calc(100% - 12px) 22px;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.campo-metade {
+    min-width: 0;
+    padding-bottom: 22px;
+}
+
+.area-dinamica {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    min-height: 172px;
+    align-content: start;
+    margin-top: 2px;
+    padding: 22px;
+    border: 1px solid rgba(0, 95, 115, 0.12);
+    border-radius: 8px;
+    background: rgba(10, 147, 150, 0.05);
+}
+
+.campo-inteiro,
+.campo-captcha,
+.status-formulario,
+.aviso-privacidade,
+form > button[type="submit"] {
+    grid-column: 1 / -1;
+}
+
+.campo-autocomplete {
+    position: relative;
+}
+
+.sugestoes-email {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 5;
+    display: none;
+    overflow: hidden;
+    border: 1px solid rgba(0, 95, 115, 0.22);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 16px 32px rgba(0, 18, 25, 0.16);
+}
+
+.sugestoes-email.visivel {
+    display: block;
+}
+
+.sugestoes-email button {
+    width: 100%;
+    display: block;
+    padding: 12px 14px;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 95, 115, 0.1);
+    background: #ffffff;
+    color: #001219;
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+}
+
+.sugestoes-email button:last-child {
+    border-bottom: 0;
+}
+
+.sugestoes-email button:hover,
+.sugestoes-email button:focus {
+    background: rgba(10, 147, 150, 0.12);
+    color: #005F73;
+    outline: none;
+}
+
+.campo textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.campo input:not([type="radio"]):focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #EE9B00;
+    background: #ffffff;
+    outline: 3px solid rgba(238, 155, 0, 0.18);
+    box-shadow: 0 12px 26px rgba(0, 18, 25, 0.08);
+}
+
+.ajuda-input {
+    color: rgba(0, 18, 25, 0.62);
+    font-size: 0.84em;
+    line-height: 1.35;
+}
+
+.campo:not(.erro) input:not([type="radio"]):required:valid,
+.campo:not(.erro) select:required:valid,
+.campo:not(.erro) textarea:required:valid {
+    border-color: #0A9396;
+    box-shadow: 0 0 0 3px rgba(10, 147, 150, 0.12);
+}
+
+.campo.erro input:not([type="radio"]),
+.campo.erro select,
+.campo.erro textarea {
+    border-color: #BB3E03;
+    box-shadow: 0 0 0 3px rgba(187, 62, 3, 0.12);
+}
+
+.campo-area .opcoes-area input {
+    position: absolute;
+    inset: 16px auto auto 16px;
+    width: 1px;
+    min-height: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.campo-area .opcoes-area input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.campo-area .opcoes-area input:required:valid {
+    border: 0;
+    box-shadow: none;
+}
+
+.campo-canal-geral .opcoes-canal input:focus,
+.campo-canal-geral .opcoes-canal input:required:valid {
+    border: 0;
+    box-shadow: none;
+    outline: none;
+}
+
+.mensagem-campo {
+    display: none;
+    color: #BB3E03;
+    font-size: 0.88em;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.campo-metade .mensagem-campo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.campo.erro .mensagem-campo {
+    display: block;
+}
+
+.campo-captcha {
+    max-width: 360px;
+    padding: 18px;
+    border: 1px solid rgba(0, 95, 115, 0.12);
+    border-radius: 8px;
+    background: rgba(0, 95, 115, 0.05);
+}
+
+.campo-captcha .h-captcha {
+    min-height: 78px;
+    overflow: hidden;
+}
+
+.mensagem-captcha {
+    min-height: 20px;
+    color: #BB3E03;
+    font-size: 0.9em;
+    line-height: 1.35;
+}
+
+.campo-site {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+form > button[type="submit"] {
+    width: fit-content;
+    min-width: 182px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: flex-start;
+    gap: 10px;
+    min-height: 52px;
+    padding: 15px 24px;
+    border: none;
+    border-radius: 5px;
+    background: #EE9B00;
+    color: #001219;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(238, 155, 0, 0.2);
+    transition: background 0.35s ease, box-shadow 0.4s ease, transform 0.35s ease;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+form > button[type="submit"]::after,
+.botao-denuncia::after,
+.botao-confirmar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 54%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+    transform: skewX(-18deg);
+    transition: left 0.55s ease;
+}
+
+form > button[type="submit"]:hover::after,
+.botao-denuncia:hover::after,
+.botao-confirmar:hover::after {
+    left: 125%;
+}
+
+form > button[type="submit"]:hover {
+    background: #CA6702;
+    box-shadow: 0 14px 28px rgba(202, 103, 2, 0.24);
+    transform: translateY(-2px);
+}
+
+form > button[type="submit"]:disabled {
+    cursor: wait;
+    opacity: 0.72;
+    transform: none;
+}
+
+.status-formulario {
+    min-height: 22px;
+    color: #005F73;
+    font-size: 0.95em;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.status-formulario.erro {
+    color: #BB3E03;
+}
+
+.status-formulario.sucesso {
+    color: #0A7A4B;
+}
+
+.aviso-privacidade {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 14px 16px;
+    border-left: 4px solid #0A9396;
+    border-radius: 8px;
+    background: rgba(10, 147, 150, 0.08);
+    color: #001219;
+    font-size: 0.9em;
+    line-height: 1.55;
+}
+
+.aviso-privacidade i {
+    color: #005F73;
+    flex: 0 0 auto;
+    margin-top: 2px;
+}
+
+.aviso-privacidade a {
+    color: #005F73;
+    font-weight: 700;
+}
+
+.informacoes-contato {
+    display: grid;
+    grid-auto-rows: minmax(174px, auto);
+    align-content: start;
+    gap: 18px;
+}
+
+.card-contato {
+    display: flex;
+    gap: 16px;
+    min-height: 174px;
+    padding: 24px;
+    align-items: flex-start;
+}
+
+.card-contato i {
+    color: #CA6702;
+    font-size: 1.7em;
+    line-height: 1;
+}
+
+.card-contato h3 {
+    color: #EE9B00;
+    margin-bottom: 6px;
+}
+
+.rotulo-card {
+    display: block;
+    margin-bottom: 14px;
+    color: #0A9396;
+    font-size: 0.88em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card-contato p {
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 104px;
+}
+
+.card-contato p span,
+.card-contato p a {
+    display: block;
+}
+
+.card-contato p span:not(:first-child) {
+    margin-top: 10px;
+}
+
+.card-contato p span {
+    color: #EE9B00;
+    font-weight: 700;
+}
+
+.card-contato a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link-endereco {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.cep-endereco {
+    display: block;
+    margin-top: 2px;
+}
+
+.card-contato a:hover {
+    color: #EE9B00;
+}
+
+.denuncia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 52px 8%;
+    background: #ffffff;
+    border-top: 5px solid #BB3E03;
+    color: #001219;
+}
+
+.denuncia div {
+    max-width: 780px;
+}
+
+.denuncia h2 {
+    color: #BB3E03;
+    margin-bottom: 10px;
+}
+
+.denuncia p {
+    line-height: 1.6;
+}
+
+.botao-denuncia {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 15px 22px;
+    border-radius: 5px;
+    background: #BB3E03;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.botao-denuncia:hover {
+    background: #CA6702;
+}
+
+.modal-confirmacao {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 18, 25, 0.72);
+    min-height: 100vh;
+    min-height: 100dvh;
+    opacity: 0;
+}
+
+.modal-confirmacao.visivel {
+    display: flex;
+    animation: modalFundo 0.22s ease forwards;
+}
+
+.modal-confirmacao.envio-email .caixa-confirmacao {
+    border-top: 5px solid #005F73;
+}
+
+.caixa-confirmacao {
+    position: relative;
+    width: min(760px, 100%);
+    max-height: calc(100dvh - 32px);
+    overflow: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 38px;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #001219;
+    border-top: 5px solid #EE9B00;
+    box-shadow: 0 28px 80px rgba(0, 18, 25, 0.38);
+    transform: translateY(14px) scale(0.98);
+}
+
+.modal-confirmacao.visivel .caixa-confirmacao {
+    animation: modalCaixa 0.26s ease forwards;
+}
+
+@keyframes modalFundo {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalCaixa {
+    to {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.caixa-confirmacao h2 {
+    color: #005F73;
+    font-size: clamp(1.85em, 3vw, 2.35em);
+    line-height: 1.08;
+    margin-bottom: 14px;
+}
+
+.caixa-confirmacao > p:not(.subtitulo) {
+    max-width: 620px;
+    color: rgba(0, 18, 25, 0.76);
+    line-height: 1.7;
+}
+
+.nota-confirmacao {
+    display: none;
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-left: 4px solid #005F73;
+    border-radius: 6px;
+    background: rgba(10, 147, 150, 0.1);
+    color: #001219;
+    font-weight: 700;
+}
+
+.nota-confirmacao.visivel {
+    display: block;
+}
+
+.fechar-confirmacao {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 95, 115, 0.1);
+    color: #005F73;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.fechar-confirmacao:hover {
+    background: rgba(0, 95, 115, 0.18);
+}
+
+.preview-mensagem {
+    max-height: none;
+    overflow: visible;
+    margin: 28px 0;
+    padding: 10px 0;
+    border-left: 4px solid #EE9B00;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(0, 95, 115, 0.1), rgba(10, 147, 150, 0.06));
+    color: #001219;
+    font-size: 0.95em;
+}
+
+.preview-linha {
+    display: grid;
+    grid-template-columns: minmax(130px, 0.34fr) minmax(0, 1fr);
+    gap: 14px;
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(0, 95, 115, 0.1);
+    line-height: 1.55;
+}
+
+.preview-linha:last-child {
+    border-bottom: 0;
+}
+
+.preview-linha strong {
+    color: #005F73;
+}
+
+.preview-linha span {
+    min-width: 0;
+    color: rgba(0, 18, 25, 0.82);
+    word-break: break-word;
+}
+
+.preview-destaque {
+    display: block;
+    color: #001219;
+    font-weight: 700;
+}
+
+.acoes-confirmacao {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding-top: 22px;
+    border-top: 1px solid rgba(0, 95, 115, 0.14);
+}
+
+.botao-cancelar,
+.botao-confirmar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 14px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.botao-cancelar {
+    border: 1px solid rgba(0, 95, 115, 0.28);
+    background: #ffffff;
+    color: #005F73;
+}
+
+.botao-cancelar:hover {
+    background: rgba(0, 95, 115, 0.08);
+}
+
+.botao-confirmar {
+    border: 0;
+    background: #EE9B00;
+    color: #001219;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(238, 155, 0, 0.2);
+}
+
+.botao-confirmar:hover {
+    background: #CA6702;
+}
+
+.rodape {
+    background: #001219;
+    color: #ffffff;
+    padding: 46px 8% 24px;
+}
+
+.rodape-marca {
+    max-width: 620px;
+}
+
+.rodape-marca h2 {
+    color: #ffffff;
+    font-size: 1.7em;
+    margin-bottom: 12px;
+}
+
+.rodape-marca p {
+    line-height: 1.65;
+}
+
+.rodape-marca .cnpj-rodape {
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.rodape-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.rodape-links a,
+.rodape-base a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.rodape-links a:hover,
+.rodape-base a:hover,
+.rodape-links a[aria-current="page"] {
+    color: #EE9B00;
+}
+
+.rodape-base {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    margin-top: 34px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    color: #0A9396;
+    font-size: 0.92em;
+}
+
+@media (max-width: 980px) {
+    .area-contato {
+        grid-template-columns: 1fr;
+    }
+
+    .informacoes-contato {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .hero-contato {
+        min-height: 300px;
+        padding: 142px 7% 38px;
+    }
+
+    .hero-contato h1 {
+        font-size: 1.98em;
+        line-height: 1.12;
+        margin-bottom: 14px;
+    }
+
+    .hero-contato p {
+        font-size: 0.96em;
+        line-height: 1.56;
+    }
+
+    .area-contato {
+        gap: 22px;
+        padding: 34px 7% 46px;
+        background: linear-gradient(180deg, #005F73 0%, #004f61 100%);
+    }
+
+    .painel-formulario {
+        padding: 20px;
+        border-color: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 16px 34px rgba(0, 18, 25, 0.18);
+    }
+
+    .cabecalho-formulario {
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+    }
+
+    .cabecalho-formulario h2 {
+        font-size: 1.72em;
+        line-height: 1.12;
+        margin-bottom: 10px;
+    }
+
+    .cabecalho-formulario p,
+    .denuncia p,
+    .card-contato p {
+        font-size: 0.94em;
+        line-height: 1.5;
+    }
+
+    form {
+        gap: 15px;
+        grid-template-columns: 1fr;
+    }
+
+    .campo {
+        gap: 7px;
+    }
+
+    .campo label,
+    .campo-area legend,
+    .campo-canal-geral legend {
+        font-size: 0.9em;
+    }
+
+    .campo input,
+    .campo select,
+    .campo textarea {
+        padding: 13px 12px;
+        border-radius: 7px;
+        font-size: 0.95em;
+    }
+
+    .campo input,
+    .campo select {
+        min-height: 48px;
+    }
+
+    .campo textarea {
+        min-height: 132px;
+    }
+
+    .area-dinamica {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        margin-top: 0;
+        padding: 14px;
+        gap: 14px;
+        border-radius: 7px;
+    }
+
+    .informacoes-contato {
+        order: -1;
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(245px, 76vw);
+        grid-auto-rows: auto;
+        gap: 14px;
+        margin-inline: -7vw;
+        padding: 2px 12vw 8px;
+        overflow-x: hidden;
+        overscroll-behavior-x: none;
+        overscroll-behavior-y: auto;
+        scroll-padding-inline: 12vw;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        touch-action: pan-y;
+    }
+
+    .informacoes-contato::-webkit-scrollbar {
+        display: none;
+    }
+
+    .area-contato .informacoes-contato + .controles-carrossel-mobile {
+        order: -1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-top: -8px;
+        margin-bottom: 6px;
+    }
+
+    .area-contato .controle-carrossel {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(238, 155, 0, 0.45);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+        cursor: pointer;
+        font: inherit;
+        transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+    }
+
+    .area-contato .controle-carrossel:not(:disabled):hover {
+        background: #EE9B00;
+        color: #001219;
+    }
+
+    .area-contato .controle-carrossel:disabled {
+        cursor: default;
+        opacity: 0.35;
+    }
+
+    .area-contato .indicadores-carrossel {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        flex: 1;
+    }
+
+    .area-contato .indicadores-carrossel button {
+        width: 8px;
+        height: 8px;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.36);
+        cursor: pointer;
+        transition: width 0.3s ease, background 0.3s ease;
+    }
+
+    .area-contato .indicadores-carrossel button.ativo {
+        width: 26px;
+        background: #EE9B00;
+    }
+
+    .opcoes-area {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(220px, 72%);
+        gap: 12px;
+        margin-inline: 0;
+        padding: 2px 13% 8px;
+        overflow-x: hidden;
+        overscroll-behavior-x: none;
+        overscroll-behavior-y: auto;
+        scroll-padding-inline: 13%;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        touch-action: pan-y;
+    }
+
+    .opcoes-area::-webkit-scrollbar {
+        display: none;
+    }
+
+    .campo-area .controles-carrossel-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-top: 8px;
+    }
+
+    .campo-area .controle-carrossel {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(0, 95, 115, 0.22);
+        border-radius: 50%;
+        background: #005F73;
+        color: #ffffff;
+        cursor: pointer;
+        font: inherit;
+        transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+    }
+
+    .campo-area .controle-carrossel:not(:disabled):hover {
+        background: #EE9B00;
+        color: #001219;
+    }
+
+    .campo-area .controle-carrossel:disabled {
+        cursor: default;
+        opacity: 0.35;
+    }
+
+    .campo-area .indicadores-carrossel {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        flex: 1;
+    }
+
+    .campo-area .indicadores-carrossel button {
+        width: 8px;
+        height: 8px;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(0, 95, 115, 0.22);
+        cursor: pointer;
+        transition: width 0.3s ease, background 0.3s ease;
+    }
+
+    .campo-area .indicadores-carrossel button.ativo {
+        width: 26px;
+        background: #EE9B00;
+    }
+
+    .opcoes-area span {
+        display: grid;
+        align-content: center;
+        min-height: 118px;
+        padding: 16px;
+        border-color: rgba(10, 147, 150, 0.26);
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
+
+    .opcoes-area span::before {
+        display: none;
+    }
+
+    .opcoes-area strong {
+        font-size: 1em;
+    }
+
+    .opcoes-area small {
+        margin-top: 8px;
+        font-size: 0.82em;
+        line-height: 1.38;
+    }
+
+    .opcoes-area input:checked + span {
+        border-color: #EE9B00;
+        background:
+            linear-gradient(180deg, rgba(238, 155, 0, 0.16), rgba(255, 255, 255, 0.98));
+        box-shadow: 0 12px 24px rgba(0, 18, 25, 0.12), 0 0 0 2px rgba(238, 155, 0, 0.18);
+    }
+
+    .opcoes-canal label {
+        flex: 1 1 100%;
+    }
+
+    .opcoes-canal span {
+        min-height: 46px;
+        padding: 11px 16px 11px 40px;
+    }
+
+    .controle-arquivo {
+        flex-direction: column;
+    }
+
+    .campo .botao-arquivo {
+        width: 100%;
+    }
+
+    .ajuda-campo {
+        min-height: 44px;
+        padding: 10px 12px;
+        border-top: 1px solid rgba(10, 147, 150, 0.36);
+        border-left: 0;
+    }
+
+    .card-contato {
+        display: grid;
+        grid-template-columns: 34px minmax(0, 1fr);
+        padding: 16px;
+        min-height: 178px;
+        gap: 10px;
+        border-left-width: 3px;
+        box-shadow: 0 12px 26px rgba(0, 18, 25, 0.12);
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
+
+    .card-contato i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        font-size: 1.12em;
+        border-radius: 8px;
+        background: rgba(238, 155, 0, 0.12);
+    }
+
+    .card-contato h3 {
+        margin-bottom: 2px;
+        font-size: 1.02em;
+    }
+
+    .rotulo-card {
+        margin-bottom: 9px;
+        font-size: 0.76em;
+    }
+
+    .card-contato p {
+        min-height: 0;
+        word-break: break-word;
+    }
+
+    .card-contato p span:not(:first-child) {
+        margin-top: 7px;
+    }
+
+    .denuncia {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        padding: 36px 7%;
+    }
+
+    .caixa-confirmacao {
+        max-height: calc(100dvh - 32px);
+        padding: 24px 20px;
+    }
+
+    .preview-linha {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 12px 16px;
+    }
+
+    .acoes-confirmacao,
+    .botao-cancelar,
+    .botao-confirmar {
+        width: 100%;
+    }
+
+    .rodape-base {
+        flex-direction: column;
+    }
+
+    form > button[type="submit"],
+    .botao-denuncia {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .campo-captcha {
+        max-width: none;
+        width: 100%;
+        overflow: hidden;
+        padding: 12px;
+        border-radius: 7px;
+    }
+
+    .campo-captcha .h-captcha {
+        transform: scale(0.88);
+        transform-origin: left top;
+        width: 114%;
+        min-height: 66px;
+    }
+
+    .campo-captcha label {
+        margin-bottom: 2px;
+    }
+
+    .mensagem-captcha {
+        min-height: 14px;
+        font-size: 0.82em;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero-contato h1,
+    .cabecalho-formulario h2 {
+        font-size: 1.78em;
+    }
+
+    .painel-formulario {
+        padding: 16px;
+    }
+
+    .card-contato {
+        padding: 14px;
+        min-height: 170px;
+    }
+
+    .informacoes-contato {
+        grid-auto-columns: minmax(230px, 78vw);
+        padding-inline: 11vw;
+        scroll-padding-inline: 11vw;
+    }
+
+    .opcoes-area {
+        grid-auto-columns: minmax(205px, 74%);
+        padding-inline: 12%;
+        scroll-padding-inline: 12%;
+    }
+
+    .campo-captcha .h-captcha {
+        transform: scale(0.82);
+        width: 122%;
+        min-height: 62px;
+    }
+}
