@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fale com a MRX Serviços para solicitar atendimento em construção civil, naval, offshore, estruturas metálicas e soluções sob medida.">
+    <meta property="og:title" content="Contato | MRX Serviços">
+    <meta property="og:description" content="Envie uma mensagem para solicitar atendimento técnico ou conversar sobre seu projeto.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="MRX Serviços">
+    <meta property="og:url" content="https://www.mrxservicos.com/contato.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#005F73">
+    <link rel="canonical" href="https://www.mrxservicos.com/contato.html">
+    <link rel="icon" type="image/webp" href="img/Icon/Favcon.webp">
+    <link rel="apple-touch-icon" href="img/Icon/Favcon.webp">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/cabecalho.css">
+    <link rel="stylesheet" href="css/contato.css">
+
+    <title>Contato | MRX Serviços</title>
+</head>
+<body>
+    <header id="cabecalho">
+        <a class="logo" href="index.html" aria-label="MRX Serviços - Início">
+            <img src="img/Icon/Logo.webp" alt="MRX Serviços" width="1536" height="864">
+        </a>
+        <button class="botao-menu" type="button" aria-label="Abrir menu" aria-controls="menuPrincipal" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="menu" aria-label="Navegação principal">
+            <ul id="menuPrincipal">
+                <li><a href="index.html">INÍCIO</a></li>
+                <li><a href="nosso-trabalho.html">NOSSO TRABALHO</a></li>
+                <li><a href="contato.html" aria-current="page">CONTATO</a></li>
+                <li><a href="denuncia.html">CANAL DE DENÚNCIA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-contato">
+            <div>
+                <p class="subtitulo">Fale com a MRX Serviços</p>
+                <h1>Vamos entender a necessidade da sua empresa</h1>
+                <p>Envie sua solicitação pelo canal mais adequado. Nossa equipe organiza as informações e retorna com orientação técnica para o próximo passo.</p>
+            </div>
+        </section>
+
+        <section class="area-contato">
+            <div class="painel-formulario">
+                <div class="cabecalho-formulario">
+                    <p class="subtitulo">Atendimento</p>
+                    <h2>Enviar solicitação</h2>
+                    <p>Preencha os dados abaixo para que a equipe receba sua mensagem com contexto, prioridade e canal de retorno definidos.</p>
+                </div>
+
+                <form id="whatsForm" novalidate>
+                    <div class="campo campo-metade">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome completo" autocomplete="name" required>
+                    </div>
+
+                    <div class="campo campo-metade">
+                        <label for="email">E-mail</label>
+                        <div class="campo-autocomplete">
+                            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" aria-describedby="sugestoesEmail" aria-expanded="false" required>
+                            <div class="sugestoes-email" id="sugestoesEmail" role="listbox"></div>
+                        </div>
+                    </div>
+
+                    <div class="campo campo-metade">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(21) 99999-9999" autocomplete="tel" inputmode="tel" aria-describedby="telefoneAjuda">
+                        <p class="ajuda-input" id="telefoneAjuda">Opcional, mas ajuda no retorno mais rápido.</p>
+                    </div>
+
+                    <fieldset class="campo campo-inteiro campo-area">
+                        <legend>Área de contato</legend>
+                        <div class="opcoes-area">
+                            <label>
+                                <input type="radio" name="areaContato" value="Assuntos gerais" data-area="geral" data-assunto-placeholder="Ex.: dúvida, informação ou parceria" data-mensagem-placeholder="Conte brevemente o assunto e como nossa equipe pode ajudar" checked required>
+                                <span>
+                                    <strong>Assuntos gerais</strong>
+                                    <small>Dúvidas, informações, parcerias e outros contatos.</small>
+                                </span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="areaContato" value="Solicitação de serviços e assunto profissional" data-area="servicos" data-assunto-placeholder="Ex.: orçamento, visita técnica ou manutenção" data-mensagem-placeholder="Descreva o serviço, local, prazo desejado e qualquer detalhe importante" required>
+                                <span>
+                                    <strong>Solicitação de serviços</strong>
+                                    <small>Orçamentos, projetos, visitas técnicas e assuntos profissionais.</small>
+                                </span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="areaContato" value="Envio de currículo" data-area="curriculo" data-assunto-placeholder="Ex.: currículo para área operacional" data-mensagem-placeholder="Informe sua área de interesse, experiência e disponibilidade. Após confirmar, seu e-mail será aberto para envio do currículo.">
+                                <span>
+                                    <strong>Enviar currículo</strong>
+                                    <small>Apresentação profissional e envio de currículo por e-mail.</small>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="area-dinamica">
+                        <fieldset class="campo campo-inteiro campo-canal-geral">
+                            <legend>Como deseja enviar assuntos gerais?</legend>
+                            <div class="opcoes-canal">
+                                <label>
+                                    <input type="radio" name="canalGeral" value="whatsapp" checked>
+                                    <span><i class="bi bi-whatsapp"></i> WhatsApp</span>
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="canalGeral" value="email">
+                                    <span><i class="bi bi-envelope"></i> E-mail</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="campo campo-metade campo-servicos">
+                            <label for="empresa">Empresa</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" autocomplete="organization" data-required-area="servicos">
+                        </div>
+
+                        <div class="campo campo-metade campo-servicos">
+                            <label for="localProjeto">Local do serviço</label>
+                            <input type="text" id="localProjeto" name="localProjeto" placeholder="Cidade, bairro ou unidade" data-required-area="servicos">
+                        </div>
+
+                        <div class="campo campo-metade campo-servicos">
+                            <label for="tipoServico">Tipo de serviço</label>
+                            <select id="tipoServico" name="tipoServico" data-required-area="servicos">
+                                <option value="">Selecione uma opção</option>
+                                <option value="Construção civil">Construção civil</option>
+                                <option value="Naval e offshore">Naval e offshore</option>
+                                <option value="Estruturas metálicas">Estruturas metálicas</option>
+                                <option value="Salas limpas">Salas limpas</option>
+                                <option value="Mobiliário sob medida">Mobiliário sob medida</option>
+                                <option value="Manutenção ou restauração">Manutenção ou restauração</option>
+                                <option value="Outro serviço">Outro serviço</option>
+                            </select>
+                        </div>
+
+                        <div class="campo campo-metade campo-servicos">
+                            <label for="prazoProjeto">Prazo desejado</label>
+                            <select id="prazoProjeto" name="prazoProjeto" data-required-area="servicos">
+                                <option value="">Selecione uma opção</option>
+                                <option value="Urgente">Urgente</option>
+                                <option value="Até 15 dias">Até 15 dias</option>
+                                <option value="Até 30 dias">Até 30 dias</option>
+                                <option value="Sem prazo definido">Sem prazo definido</option>
+                            </select>
+                        </div>
+
+                        <div class="campo campo-metade campo-geral">
+                            <label for="melhorRetorno">Melhor horário para retorno</label>
+                            <select id="melhorRetorno" name="melhorRetorno">
+                                <option value="">Sem preferência</option>
+                                <option value="Manhã">Manhã</option>
+                                <option value="Tarde">Tarde</option>
+                                <option value="Horário comercial">Horário comercial</option>
+                            </select>
+                        </div>
+
+                        <div class="campo campo-metade campo-curriculo">
+                            <label for="areaInteresse">Área de interesse</label>
+                            <input type="text" id="areaInteresse" name="areaInteresse" placeholder="Ex.: operação, montagem, administrativo" data-required-area="curriculo">
+                        </div>
+
+                        <div class="campo campo-metade campo-curriculo">
+                            <label for="disponibilidade">Disponibilidade</label>
+                            <select id="disponibilidade" name="disponibilidade" data-required-area="curriculo">
+                                <option value="">Selecione uma opção</option>
+                                <option value="Imediata">Imediata</option>
+                                <option value="Em até 15 dias">Em até 15 dias</option>
+                                <option value="Em até 30 dias">Em até 30 dias</option>
+                                <option value="A combinar">A combinar</option>
+                            </select>
+                        </div>
+
+                        <div class="campo campo-inteiro campo-curriculo" id="campoCurriculo">
+                            <label for="curriculo">Currículo</label>
+                            <div class="controle-arquivo">
+                                <input class="input-arquivo" type="file" id="curriculo" name="curriculo" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                                <label class="botao-arquivo" for="curriculo"><i class="bi bi-paperclip"></i> Adicionar arquivo</label>
+                                <p class="ajuda-campo" id="ajudaCurriculo">Nenhum arquivo selecionado. Formatos aceitos: PDF ou DOCX.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="campo campo-inteiro">
+                        <label for="assunto">Assunto</label>
+                        <input type="text" id="assunto" name="assunto" placeholder="Ex.: orçamento, visita técnica ou manutenção" required>
+                    </div>
+
+                    <div class="campo campo-inteiro">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" placeholder="Descreva o serviço, local, prazo desejado e qualquer detalhe importante" required></textarea>
+                    </div>
+
+                    <div class="campo campo-captcha">
+                        <label>Confirmação anti-spam</label>
+                        <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
+                        <p class="mensagem-captcha" id="mensagemCaptcha" aria-live="polite"></p>
+                    </div>
+
+                    <div class="campo-site" aria-hidden="true">
+                        <label for="site">Site</label>
+                        <input type="text" id="site" name="site" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <button type="submit" id="botaoEnviarContato"><i class="bi bi-whatsapp"></i> Enviar no WhatsApp</button>
+                    <p class="status-formulario" id="statusFormulario" aria-live="polite"></p>
+                    <p class="aviso-privacidade"><i class="bi bi-lock"></i> Ao enviar a mensagem, seus dados serão usados apenas para retorno do atendimento. Consulte nossa <a href="privacidade.html">Política de Privacidade</a>.</p>
+                </form>
+            </div>
+
+            <aside class="informacoes-contato">
+                <article class="card-contato">
+                    <i class="bi bi-telephone"></i>
+                    <div>
+                        <h3>Telefones</h3>
+                        <span class="rotulo-card">Atendimento direto</span>
+                        <p>
+                            <a href="tel:+5521970777424">55 (21) 97077-7424</a><br>
+                            <a href="tel:+5521968299331">55 (21) 96829-9331</a><br>
+                            <a href="tel:+5521998457698">55 (21) 9-9845-7698</a>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card-contato">
+                    <i class="bi bi-envelope"></i>
+                    <div>
+                        <h3>E-mails</h3>
+                        <span class="rotulo-card">Canais por assunto</span>
+                        <p>
+                            <span>Geral</span>
+                            <a href="mailto:contato@mrxservicos.com">contato@mrxservicos.com</a>
+                            <span>Serviços</span>
+                            <a href="mailto:eduardosantos@crservicos.com">eduardosantos@crservicos.com</a>
+                            <span>Denúncias</span>
+                            <a href="mailto:denuncia@mrxservicos.com">denuncia@mrxservicos.com</a>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card-contato">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <div>
+                        <h3>Endereço</h3>
+                        <span class="rotulo-card">Base operacional</span>
+                        <p><a class="link-endereco" href="https://maps.app.goo.gl/hu8XdHGZX6GKLyWRA" target="_blank" rel="noopener noreferrer">Rua Guaporé, n°. 4166 galpão, Boa Vista<br>São Gonçalo, RJ.</a><span class="cep-endereco">CEP: 24466-270.</span></p>
+                    </div>
+                </article>
+            </aside>
+        </section>
+
+        <section class="denuncia">
+            <div>
+                <p class="subtitulo">Canal independente</p>
+                <h2><i class="bi bi-exclamation-triangle"></i> Canal de Denúncias</h2>
+                <p>Relatos são tratados de forma confidencial, e a identificação é opcional.</p>
+            </div>
+            <a class="botao-denuncia" href="denuncia.html">Registrar denúncia</a>
+        </section>
+    </main>
+
+    <div class="modal-confirmacao" id="modalConfirmacao" aria-hidden="true">
+        <div class="caixa-confirmacao" role="dialog" aria-modal="true" aria-labelledby="tituloConfirmacao">
+            <button class="fechar-confirmacao" type="button" id="fecharConfirmacao" aria-label="Fechar confirmação">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <p class="subtitulo">Confirmar envio</p>
+            <h2 id="tituloConfirmacao">Revise sua mensagem</h2>
+            <p id="textoConfirmacao">Ao confirmar, os campos serão limpos e o WhatsApp será aberto com o texto abaixo.</p>
+            <p class="nota-confirmacao" id="notaConfirmacao"></p>
+            <div class="preview-mensagem" id="previewMensagem"></div>
+            <div class="acoes-confirmacao">
+                <button type="button" class="botao-cancelar" id="cancelarConfirmacao">Editar dados</button>
+                <button type="button" class="botao-confirmar" id="confirmarEnvio">
+                    <i class="bi bi-whatsapp"></i> Confirmar e abrir WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <div class="rodape-marca">
+            <h2>MRX Serviços</h2>
+            <p>Soluções em construção civil, naval, offshore, estruturas metálicas, salas limpas e mobiliário sob medida.</p>
+            <p class="cnpj-rodape">CNPJ: 55.227.321/0001-15</p>
+        </div>
+
+        <div class="rodape-links">
+            <a href="index.html">Início</a>
+            <a href="nosso-trabalho.html">Nosso Trabalho</a>
+            <a href="contato.html" aria-current="page">Contato</a>
+            <a href="denuncia.html">Canal de Denúncia</a>
+        </div>
+
+        <div class="rodape-base">
+            <p>© 2026 MRX Serviços. Todos os direitos reservados.</p>
+            <a href="privacidade.html">Política de Privacidade</a>
+        </div>
+    </footer>
+
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script src="js/site.js" defer></script>
+</body>
+</html>
