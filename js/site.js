@@ -929,6 +929,22 @@ function configurarMascaraTelefone() {
 function configurarGaleria() {
     const botaoGaleria = document.getElementById("botaoGaleria");
     const gradeGaleria = document.getElementById("gradeGaleria");
+
+    if (gradeGaleria) {
+        const itensGaleria = Array.from(gradeGaleria.querySelectorAll(".item-galeria"));
+        const quantidadeInicial = Math.min(4, itensGaleria.length);
+
+        for (let indice = itensGaleria.length - 1; indice > 0; indice -= 1) {
+            const indiceAleatorio = Math.floor(Math.random() * (indice + 1));
+            [itensGaleria[indice], itensGaleria[indiceAleatorio]] = [itensGaleria[indiceAleatorio], itensGaleria[indice]];
+        }
+
+        itensGaleria.forEach(function(item, indice) {
+            item.classList.toggle("foto-extra", indice >= quantidadeInicial);
+            gradeGaleria.appendChild(item);
+        });
+    }
+
     const fotosExtras = document.querySelectorAll(".foto-extra");
     const secaoGaleria = gradeGaleria ? gradeGaleria.closest(".galeria-trabalhos") : null;
     const rotuloBotao = botaoGaleria ? botaoGaleria.querySelector(".texto-botao-galeria strong") : null;
