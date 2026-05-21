@@ -1434,8 +1434,8 @@ function configurarCarrosseisMobile() {
                 indicador.classList.toggle("ativo", indice === indiceAtual);
             });
 
-            botaoAnterior.disabled = indiceAtual === 0;
-            botaoProximo.disabled = indiceAtual === itens.length - 1;
+            botaoAnterior.disabled = !carrosselEhGaleria && indiceAtual === 0;
+            botaoProximo.disabled = !carrosselEhGaleria && indiceAtual === itens.length - 1;
 
             if (carrosselEhAreaContato && window.innerWidth <= 720) {
                 const radioAtual = itens[indiceAtual].querySelector('input[type="radio"]');
@@ -1448,7 +1448,9 @@ function configurarCarrosseisMobile() {
         }
 
         function irParaIndice(indice) {
-            const proximoIndice = Math.min(Math.max(indice, 0), itens.length - 1);
+            const proximoIndice = carrosselEhGaleria
+                ? (indice + itens.length) % itens.length
+                : Math.min(Math.max(indice, 0), itens.length - 1);
 
             carrossel.scrollTo({
                 left: itens[proximoIndice].offsetLeft - carrossel.offsetLeft - ((carrossel.clientWidth - itens[proximoIndice].offsetWidth) / 2),
